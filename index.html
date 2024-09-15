@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ChemBook</title>
+    <meta name="description" content="https://chembook.github.io">
+    <meta name="author" content="ChemBook">
+    <link rel="icon" type="image/jpeg" href="images/me.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="images/me.jpg" class="avatar" alt="" style="width: 100px; text-align: center; ">
+        <div style="font-size: 25px;font-weight: bolder;margin-top: 10px;">ChemBook</div>
+        <div>化学相关资料</div><br>
+        <div>
+            <div style="display: flex;justify-content: center;align-items: center; margin-bottom: 10px;">
+                <div style="font-size: 12px;">联系📮：</div>
+                <div id="email" onclick="copyToClipboard(this)" title="点击复制邮箱地址" style="font-size: 12px;">chembook@foxmail.com</div>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center; margin-bottom: 10px;">
+                <div style="font-size: 12px;">微信：</div>
+                <div id="email" onclick="copyToClipboard(this)" title="点击复制微信号" style="font-size: 12px;">123135413</div>
+            </div>
+            <div id="notification">复制成功！</div>
+
+        </div>
+        
+        <div class="container">
+            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/1.png" alt="">初中化学
+            </a>
+            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/2.png" alt="">高中化学
+            </a>
+            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/3.png" alt="">大学化学
+            </a>
+            <a class="button button-gzh item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
+                <!-- <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/91/70/db/9170db3e-c79e-b2b1-4e2a-ffa58bf19cec/AppIcon-1x_U007emarketing-0-10-0-0-85-220-0.png/460x0w.webp" alt=""> -->关注微信公众号
+            </a>
+        </div>
+    </div>
+    <script defer type="text/javascript" src="script.js"></script>
+</body>
+</html>
