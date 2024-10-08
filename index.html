@@ -3,45 +3,159 @@
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ChemBook</title>
-    <meta name="description" content="https://chembook.github.io">
-    <meta name="author" content="ChemBook">
-    <link rel="icon" type="image/jpeg" href="images/me.jpg">
-    <link rel="stylesheet" href="style.css">
+	<title>敛凝</title>
+    <meta name="description" content="https://start.majie.me">
+    <meta name="author" content="敛凝">
+    <link rel="icon" type="image/png" href="images/me.jpg">
+    <style>
+        html, body {
+            width: 100dvw;
+            height: 100dvh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }    
+        #notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #06ad56;
+            color: white;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        #email {
+            cursor: pointer;
+            color: darkgray;
+            font-size: 12px;
+            font-style: italic;
+        }
+        #email:hover {
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .item {
+            margin: 10px 0;
+        }
+        .button,button {
+            display: inline-block;
+            text-decoration: none;
+            height: 100%;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+            width: 280px;
+            font-weight: 700;
+            line-height: 20px;
+            padding: 14px 12px 12px 12px;
+            letter-spacing: 0.1px;
+            white-space: wrap;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }     
+        button:hover,
+        .button:focus {
+            color: #212121;
+            border-color: #888;
+            outline: #7AB8FF solid 3px
+        }
+        .icon {
+            padding: 0px 8px 3.5px 0px;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+        .button.button-default {
+            color: #000000;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .button.button-default:hover,
+        .button.button-default:focus {
+            filter: brightness(90%);
+        }
+        .button.button-gzh {
+            display: inline-block;
+            overflow: visible;
+            vertical-align: middle;
+            text-align: center;
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: solid;
+            cursor: pointer;
+            background-color: #07c160;
+            background-image: linear-gradient(to bottom, #07C160 0, #07C160 100%);
+            border-color: #07C160;
+            color: #FFFFFF;
+        }
+        .button.button-gzh:hover {
+            background-color: #06ad56;
+            background-image: linear-gradient(to bottom, #06AD56 0, #06AD56 100%);
+            border-color: #06ad56;
+            box-shadow: none;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <div style="text-align: center;">
         <img src="images/me.jpg" class="avatar" alt="" style="width: 100px; text-align: center; ">
         <div style="font-size: 25px;font-weight: bolder;margin-top: 10px;">敛凝</div>
-        <div>化学相关资料</div><br>
+        <!-- <div>化学相关资料</div><br> -->
         <div>
             <div style="display: flex;justify-content: center;align-items: center; margin-bottom: 10px;">
                 <div style="font-size: 12px;">联系📮：</div>
-                <div id="email" onclick="copyToClipboard(this)" title="点击复制邮箱地址" style="font-size: 12px;">chembook@foxmail.com</div>
+                <div id="email" onclick="copyToClipboard(this)" title="点击复制邮箱地址" style="font-size: 12px;">hi@majie.me</div>
             </div>
             <div style="display: flex;justify-content: center;align-items: center; margin-bottom: 10px;">
                 <div style="font-size: 12px;">微信：</div>
                 <div id="email" onclick="copyToClipboard(this)" title="点击复制微信号" style="font-size: 12px;">123135413</div>
             </div>
             <div id="notification">复制成功！</div>
-
+            <script>
+                async function copyToClipboard(element) {
+                    try {
+                        await navigator.clipboard.writeText(element.innerText);
+                        showNotification();
+                    } catch (err) {
+                        console.error('复制失败: ', err);
+                    }
+                }
+                function showNotification() {
+                    var notification = document.getElementById('notification');
+                    notification.style.display = 'block';
+                    setTimeout(function() {
+                        notification.style.display = 'none';
+                        }, 3000);
+                }
+            </script>
         </div>
         
         <div class="container">
-            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/1.png" alt="">初中化学
+            <a class="button button-default item" href="https://xlog.majie.me" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/xlog.svg" alt="">xLog
             </a>
-            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/2.png" alt="">高中化学
+            <a class="button button-default item" href="https://start.majie.me" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/start.svg" alt="">开始页
             </a>
-            <a class="button button-default item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/3.png" alt="">大学化学
+            <a class="button button-default item" href="https://www.zhihu.com/maajie" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/zhihu.svg" alt="">知乎
             </a>
-            <a class="button button-gzh item" href="https://chembook.github.io" target="_blank" rel="noopener" role="button">
-                <!-- <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/91/70/db/9170db3e-c79e-b2b1-4e2a-ffa58bf19cec/AppIcon-1x_U007emarketing-0-10-0-0-85-220-0.png/460x0w.webp" alt=""> -->关注微信公众号
+            <a class="button button-default item" href="https://github.com/maajie" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/github.svg" alt="">GitHub
+            </a>
+            <a class="button button-gzh item" href="https://maajie.github.io" target="_blank" rel="noopener" role="button">
+                <img class="icon" src="images/icons/weixin.svg" alt="">关注微信公众号
             </a>
         </div>
     </div>
-    <script defer type="text/javascript" src="script.js"></script>
 </body>
 </html>
